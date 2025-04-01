@@ -63,14 +63,14 @@ const SortingVisualizer = () => {
     }
   };
 
-  // Update algorithm button definitions with text colors
+  // Updated algorithm button definitions with improved text styles
   const algorithmButtons = [
-    { name: "Bubble Sort", key: "bubble", bgColor: "bg-blue-500", textColor: "text-black", hoverColor: "hover:bg-blue-600", activeColor: "active:bg-blue-700", darkBgColor: "dark:bg-blue-600", darkHoverColor: "dark:hover:bg-blue-700" },
-    { name: "Selection Sort", key: "selection", bgColor: "bg-violet-500", textColor: "text-black text-xl font-bold", hoverColor: "hover:bg-violet-600", activeColor: "active:bg-violet-700", darkBgColor: "dark:bg-violet-600", darkHoverColor: "dark:hover:bg-violet-700" },
-    { name: "Insertion Sort", key: "insertion", bgColor: "bg-emerald-500", textColor: "text-black", hoverColor: "hover:bg-emerald-600", activeColor: "active:bg-emerald-700", darkBgColor: "dark:bg-emerald-600", darkHoverColor: "dark:hover:bg-emerald-700" },
-    { name: "Merge Sort", key: "merge", bgColor: "bg-red-500", textColor: "text-black", hoverColor: "hover:bg-red-600", activeColor: "active:bg-red-700", darkBgColor: "dark:bg-red-600", darkHoverColor: "dark:hover:bg-red-700" },
-    { name: "Quick Sort", key: "quick", bgColor: "bg-amber-500", textColor: "text-black", hoverColor: "hover:bg-amber-600", activeColor: "active:bg-amber-700", darkBgColor: "dark:bg-amber-600", darkHoverColor: "dark:hover:bg-amber-700" },
-    { name: "Heap Sort", key: "heap", bgColor: "bg-pink-500", textColor: "text-black", hoverColor: "hover:bg-pink-600", activeColor: "active:bg-pink-700", darkBgColor: "dark:bg-pink-600", darkHoverColor: "dark:hover:bg-pink-700" }
+    { name: "Bubble Sort", key: "bubble", bgColor: "bg-blue-500", textColor: "text-black text-xl font-bold", hoverColor: "hover:bg-blue-600", activeColor: "active:bg-blue-700", darkBgColor: "dark:bg-blue-600", darkHoverColor: "dark:hover:bg-blue-700", darkTextColor: "dark:text-white" },
+    { name: "Selection Sort", key: "selection", bgColor: "bg-violet-500", textColor: "text-black text-xl font-bold", hoverColor: "hover:bg-violet-600", activeColor: "active:bg-violet-700", darkBgColor: "dark:bg-violet-600", darkHoverColor: "dark:hover:bg-violet-700", darkTextColor: "dark:text-white" },
+    { name: "Insertion Sort", key: "insertion", bgColor: "bg-emerald-500", textColor: "text-black text-xl font-bold", hoverColor: "hover:bg-emerald-600", activeColor: "active:bg-emerald-700", darkBgColor: "dark:bg-emerald-600", darkHoverColor: "dark:hover:bg-emerald-700", darkTextColor: "dark:text-white" },
+    { name: "Merge Sort", key: "merge", bgColor: "bg-red-500", textColor: "text-black text-xl font-bold", hoverColor: "hover:bg-red-600", activeColor: "active:bg-red-700", darkBgColor: "dark:bg-red-600", darkHoverColor: "dark:hover:bg-red-700", darkTextColor: "dark:text-white" },
+    { name: "Quick Sort", key: "quick", bgColor: "bg-amber-500", textColor: "text-black text-xl font-bold", hoverColor: "hover:bg-amber-600", activeColor: "active:bg-amber-700", darkBgColor: "dark:bg-amber-600", darkHoverColor: "dark:hover:bg-amber-700", darkTextColor: "dark:text-white" },
+    { name: "Heap Sort", key: "heap", bgColor: "bg-pink-500", textColor: "text-black text-xl font-bold", hoverColor: "hover:bg-pink-600", activeColor: "active:bg-pink-700", darkBgColor: "dark:bg-pink-600", darkHoverColor: "dark:hover:bg-pink-700", darkTextColor: "dark:text-white" }
   ];
 
   useEffect(() => {
@@ -234,17 +234,21 @@ const SortingVisualizer = () => {
             </div>
             
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              <label className="block text-sm font-medium text-gray-300 dark:text-white-300 mb-1">
                 Sort Speed
               </label>
               <select
                 value={sortSpeed}
                 onChange={(e) => setSortSpeed(parseFloat(e.target.value))}
                 disabled={sorting}
-                className="w-full p-2 bg-white rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600"
+                className="w-full p-2 bg-gray-50 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-500 dark:bg-gray-600 dark:border-gray-600 text-black font-medium"
               >
                 {speedOptions.map((option) => (
-                  <option key={option.value} value={option.value}>
+                  <option 
+                    key={option.value} 
+                    value={option.value} 
+                    className="bg-gray-50 dark:bg-gray-600 text-black font-medium"
+                  >
                     {option.label}
                   </option>
                 ))}
@@ -255,10 +259,10 @@ const SortingVisualizer = () => {
               <button
                 onClick={resetArray}
                 disabled={sorting}
-                className={`px-4 py-2 rounded-md font-medium ${
+                className={`px-4 py-2 rounded-md font-medium text-lg ${
                   sorting
                     ? "bg-gray-300 text-gray-700 cursor-not-allowed dark:bg-gray-700 dark:text-gray-400"
-                    : "bg-green-500 text-white hover:bg-green-600 active:bg-green-700 dark:bg-green-600 dark:hover:bg-green-700"
+                    : "bg-green-500 text-black font-bold hover:bg-green-600 active:bg-green-700 dark:bg-green-600 dark:hover:bg-green-700 dark:text-white"
                 }`}
               >
                 Reset Array
@@ -267,10 +271,10 @@ const SortingVisualizer = () => {
               <button
                 onClick={() => setIsCustomInputOpen(true)}
                 disabled={sorting}
-                className={`px-4 py-2 rounded-md font-medium ${
+                className={`px-4 py-2 rounded-md font-medium text-lg ${
                   sorting
                     ? "bg-gray-300 text-gray-700 cursor-not-allowed dark:bg-gray-700 dark:text-gray-400"
-                    : "bg-blue-500 text-white hover:bg-blue-600 active:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700"
+                    : "bg-blue-500 text-black font-bold hover:bg-blue-600 active:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700 dark:text-white"
                 }`}
               >
                 Custom Array
@@ -279,7 +283,7 @@ const SortingVisualizer = () => {
               {sorting && (
                 <button
                   onClick={handlePauseResume}
-                  className="px-4 py-2 rounded-md font-medium bg-yellow-500 text-black hover:bg-yellow-600 active:bg-yellow-700 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:text-white"
+                  className="px-4 py-2 rounded-md font-bold text-lg bg-yellow-500 text-black hover:bg-yellow-600 active:bg-yellow-700 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:text-white"
                 >
                   {isPaused ? "Resume" : "Pause"}
                 </button>
@@ -314,8 +318,8 @@ const SortingVisualizer = () => {
               className={`relative overflow-hidden px-4 py-3 rounded-lg font-medium transition-colors ${
                 sorting
                   ? "bg-gray-300 text-gray-700 cursor-not-allowed dark:bg-gray-700 dark:text-gray-400"
-                  : `${algo.bgColor} ${algo.textColor} ${algo.hoverColor} ${algo.activeColor} ${algo.darkBgColor} ${algo.darkHoverColor}`
-              } ${sortType === algo.key ? "ring-2 ring-offset-2 ring-offset-gray-50 ring-blue-500 dark:ring-offset-gray-900" : ""}`}
+                  : `${algo.bgColor} ${algo.textColor} ${algo.hoverColor} ${algo.activeColor} ${algo.darkBgColor} ${algo.darkHoverColor} ${algo.darkTextColor}`
+              } ${sortType === algo.key ? "ring-4 ring-offset-2 ring-offset-gray-50 ring-blue-500 dark:ring-offset-gray-900" : ""}`}
             >
               {algo.name}
               {sorting && sortType === algo.key && (
@@ -328,7 +332,7 @@ const SortingVisualizer = () => {
         </div>
 
         <div className={`bg-white shadow rounded-lg p-4 dark:bg-gray-800 transition-all ${sorting ? "opacity-100" : "opacity-0"}`}>
-          <h3 className="text-lg font-medium mb-2">
+          <h3 className="text-lg text-white dark:text-white font-medium mb-2">
             {sorting ? `Running ${sortType.charAt(0).toUpperCase() + sortType.slice(1)} Sort...` : "Select an algorithm to start"}
           </h3>
           <div className="text-sm text-gray-600 dark:text-gray-400">
@@ -362,7 +366,7 @@ const SortingVisualizer = () => {
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 rounded-md bg-blue-500 text-black hover:bg-blue-600"
+                  className="px-4 py-2 rounded-md bg-blue-500 text-black font-bold hover:bg-blue-600 dark:text-white"
                 >
                   Apply
                 </button>

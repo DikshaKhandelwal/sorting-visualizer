@@ -1,0 +1,133 @@
+/* App container styles */
+.App {
+ text-align: center;
+ min-height: 100vh;
+ display: flex;
+ flex-direction: column;
+}
+
+/* Header styles */
+.App-header {
+ background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+ padding: 2rem 1rem;
+ color: white;
+ margin-bottom: 1rem;
+}
+
+.App-header h1 {
+ margin: 0;
+ font-size: 2.5rem;
+ font-weight: 800;
+ letter-spacing: -0.025em;
+}
+
+.App-header p {
+ font-size: 1.25rem;
+ opacity: 0.9;
+ margin: 0.5rem 0 0;
+}
+
+/* Main content area */
+main {
+ flex: 1;
+ padding: 0 1rem;
+}
+
+/* Footer styles */
+footer {
+ background-color: #f3f4f6;
+ padding: 3rem 1rem;
+ margin-top: 3rem;
+ border-top: 1px solid #e5e7eb;
+}
+
+footer .container {
+ max-width: 1200px;
+ margin: 0 auto;
+}
+
+footer p {
+ color: #4b5563;
+ margin-bottom: 2rem;
+}
+
+.algorithm-info h3 {
+ font-size: 1.5rem;
+ color: #1f2937;
+ margin-bottom: 1.5rem;
+ text-align: left;
+}
+
+.algo-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+ gap: 1.5rem;
+ text-align: left;
+}
+
+.algo-card {
+ background-color: white;
+ border-radius: 0.5rem;
+ padding: 1.5rem;
+ box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+ transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.algo-card:hover {
+ transform: translateY(-5px);
+ box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.algo-card h4 {
+ font-size: 1.25rem;
+ margin: 0 0 0.75rem;
+ color: #4f46e5;
+}
+
+.algo-card p {
+ margin: 0.5rem 0;
+ color: #4b5563;
+}
+
+/* Dark mode support for App component */
+@media (prefers-color-scheme: dark) {
+ footer {
+   background-color: #1f2937;
+   border-top-color: #374151;
+ }
+ 
+ footer p {
+   color: #d1d5db;
+ }
+ 
+ .algorithm-info h3 {
+   color: #f9fafb;
+ }
+ 
+ .algo-card {
+   background-color: #111827;
+ }
+ 
+ .algo-card h4 {
+   color: #818cf8;
+ }
+ 
+ .algo-card p {
+   color: #9ca3af;
+ }
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+ .App-header h1 {
+   font-size: 2rem;
+ }
+ 
+ .App-header p {
+   font-size: 1rem;
+ }
+ 
+ .algo-grid {
+   grid-template-columns: 1fr;
+ }
+}

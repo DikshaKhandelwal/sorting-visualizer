@@ -27,6 +27,9 @@ const SortingVisualizer = () => {
     { value: 1, label: "1x" },
     { value: 1.5, label: "1.5x" },
     { value: 2, label: "2x" },
+    { value: 3, label: "3x" },
+    { value: 4, label: "4x" },
+    { value: 5, label: "5x" },
   ];
 
   // Algorithm color definitions - using a single color per algorithm with different shades

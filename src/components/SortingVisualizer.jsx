@@ -63,14 +63,14 @@ const SortingVisualizer = () => {
     }
   };
 
-  // Button definitions with proper color classes
+  // Update algorithm button definitions with text colors
   const algorithmButtons = [
-    { name: "Bubble Sort", key: "bubble", bgColor: "bg-blue-500", hoverColor: "hover:bg-blue-600", activeColor: "active:bg-blue-700", darkBgColor: "dark:bg-blue-600", darkHoverColor: "dark:hover:bg-blue-700" },
-    { name: "Selection Sort", key: "selection", bgColor: "bg-violet-500", hoverColor: "hover:bg-violet-600", activeColor: "active:bg-violet-700", darkBgColor: "dark:bg-violet-600", darkHoverColor: "dark:hover:bg-violet-700" },
-    { name: "Insertion Sort", key: "insertion", bgColor: "bg-emerald-500", hoverColor: "hover:bg-emerald-600", activeColor: "active:bg-emerald-700", darkBgColor: "dark:bg-emerald-600", darkHoverColor: "dark:hover:bg-emerald-700" },
-    { name: "Merge Sort", key: "merge", bgColor: "bg-red-500", hoverColor: "hover:bg-red-600", activeColor: "active:bg-red-700", darkBgColor: "dark:bg-red-600", darkHoverColor: "dark:hover:bg-red-700" },
-    { name: "Quick Sort", key: "quick", bgColor: "bg-amber-500", hoverColor: "hover:bg-amber-600", activeColor: "active:bg-amber-700", darkBgColor: "dark:bg-amber-600", darkHoverColor: "dark:hover:bg-amber-700" },
-    { name: "Heap Sort", key: "heap", bgColor: "bg-pink-500", hoverColor: "hover:bg-pink-600", activeColor: "active:bg-pink-700", darkBgColor: "dark:bg-pink-600", darkHoverColor: "dark:hover:bg-pink-700" }
+    { name: "Bubble Sort", key: "bubble", bgColor: "bg-blue-500", textColor: "text-black", hoverColor: "hover:bg-blue-600", activeColor: "active:bg-blue-700", darkBgColor: "dark:bg-blue-600", darkHoverColor: "dark:hover:bg-blue-700" },
+    { name: "Selection Sort", key: "selection", bgColor: "bg-violet-500", textColor: "text-black text-xl font-bold", hoverColor: "hover:bg-violet-600", activeColor: "active:bg-violet-700", darkBgColor: "dark:bg-violet-600", darkHoverColor: "dark:hover:bg-violet-700" },
+    { name: "Insertion Sort", key: "insertion", bgColor: "bg-emerald-500", textColor: "text-black", hoverColor: "hover:bg-emerald-600", activeColor: "active:bg-emerald-700", darkBgColor: "dark:bg-emerald-600", darkHoverColor: "dark:hover:bg-emerald-700" },
+    { name: "Merge Sort", key: "merge", bgColor: "bg-red-500", textColor: "text-black", hoverColor: "hover:bg-red-600", activeColor: "active:bg-red-700", darkBgColor: "dark:bg-red-600", darkHoverColor: "dark:hover:bg-red-700" },
+    { name: "Quick Sort", key: "quick", bgColor: "bg-amber-500", textColor: "text-black", hoverColor: "hover:bg-amber-600", activeColor: "active:bg-amber-700", darkBgColor: "dark:bg-amber-600", darkHoverColor: "dark:hover:bg-amber-700" },
+    { name: "Heap Sort", key: "heap", bgColor: "bg-pink-500", textColor: "text-black", hoverColor: "hover:bg-pink-600", activeColor: "active:bg-pink-700", darkBgColor: "dark:bg-pink-600", darkHoverColor: "dark:hover:bg-pink-700" }
   ];
 
   useEffect(() => {
@@ -257,7 +257,7 @@ const SortingVisualizer = () => {
                 disabled={sorting}
                 className={`px-4 py-2 rounded-md font-medium ${
                   sorting
-                    ? "bg-gray-300 text-gray-500 cursor-not-allowed dark:bg-gray-700"
+                    ? "bg-gray-300 text-gray-700 cursor-not-allowed dark:bg-gray-700 dark:text-gray-400"
                     : "bg-green-500 text-white hover:bg-green-600 active:bg-green-700 dark:bg-green-600 dark:hover:bg-green-700"
                 }`}
               >
@@ -269,7 +269,7 @@ const SortingVisualizer = () => {
                 disabled={sorting}
                 className={`px-4 py-2 rounded-md font-medium ${
                   sorting
-                    ? "bg-gray-300 text-gray-500 cursor-not-allowed dark:bg-gray-700"
+                    ? "bg-gray-300 text-gray-700 cursor-not-allowed dark:bg-gray-700 dark:text-gray-400"
                     : "bg-blue-500 text-white hover:bg-blue-600 active:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700"
                 }`}
               >
@@ -279,7 +279,7 @@ const SortingVisualizer = () => {
               {sorting && (
                 <button
                   onClick={handlePauseResume}
-                  className="px-4 py-2 rounded-md font-medium bg-yellow-500 text-black hover:bg-yellow-600 active:bg-yellow-700 dark:bg-yellow-600 dark:hover:bg-yellow-700"
+                  className="px-4 py-2 rounded-md font-medium bg-yellow-500 text-black hover:bg-yellow-600 active:bg-yellow-700 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:text-white"
                 >
                   {isPaused ? "Resume" : "Pause"}
                 </button>
@@ -313,14 +313,14 @@ const SortingVisualizer = () => {
               disabled={sorting}
               className={`relative overflow-hidden px-4 py-3 rounded-lg font-medium transition-colors ${
                 sorting
-                  ? "bg-gray-300 text-gray-500 cursor-not-allowed dark:bg-gray-700"
-                  : `${algo.bgColor} ${algo.hoverColor} ${algo.activeColor} ${algo.darkBgColor} ${algo.darkHoverColor} text-white`
+                  ? "bg-gray-300 text-gray-700 cursor-not-allowed dark:bg-gray-700 dark:text-gray-400"
+                  : `${algo.bgColor} ${algo.textColor} ${algo.hoverColor} ${algo.activeColor} ${algo.darkBgColor} ${algo.darkHoverColor}`
               } ${sortType === algo.key ? "ring-2 ring-offset-2 ring-offset-gray-50 ring-blue-500 dark:ring-offset-gray-900" : ""}`}
             >
               {algo.name}
               {sorting && sortType === algo.key && (
                 <span className="absolute inset-0 flex justify-center items-center bg-black bg-opacity-20">
-                  <span className="h-4 w-4 rounded-full border-2 border-white border-t-transparent animate-spin"></span>
+                  <span className="h-4 w-4 rounded-full border-2 border-current border-t-transparent animate-spin"></span>
                 </span>
               )}
             </button>
@@ -362,7 +362,7 @@ const SortingVisualizer = () => {
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 rounded-md bg-blue-500 text-white hover:bg-blue-600"
+                  className="px-4 py-2 rounded-md bg-blue-500 text-black hover:bg-blue-600"
                 >
                   Apply
                 </button>

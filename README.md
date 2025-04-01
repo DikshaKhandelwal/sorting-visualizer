@@ -9,12 +9,9 @@ A web-based **Sorting Algorithm Visualizer** built using **React.js** and **Tail
 - 🎛️ **Customizable speed and array size**
 - 🌙 **Dark mode support**
 
-## 📸 Screenshots
-![Sorting Visualizer](https://dikshakhandelwal.github.io/sorting-visualizer/)
-
 ## 🛠️ Tech Stack
 - **Frontend:** React.js, Tailwind CSS
-- **Deployment:** Vercel / Netlify / GitHub Pages
+- **Deployment:** GitHub Pages
 
 ## 🔧 Installation
 1. **Clone the repository:**
@@ -33,20 +30,13 @@ A web-based **Sorting Algorithm Visualizer** built using **React.js** and **Tail
 4. Open `http://localhost:3000/` in your browser.
 
 ## 🚀 Deployment
-### **Vercel**
-```sh
-npm install -g vercel
-vercel
-```
-### **Netlify**
-```sh
-npm run build
-netlify deploy --prod --dir=build
-```
 ### **GitHub Pages**
+This project is already deployed at:
+👉 **[Sorting Visualizer Live](https://dikshakhandelwal.github.io/sorting-visualizer/)**
+
 1. Add this to `package.json`:
    ```json
-   "homepage": "https://your-username.github.io/sorting-visualizer",
+   "homepage": "https://dikshakhandelwal.github.io/sorting-visualizer",
    "scripts": {
      "predeploy": "npm run build",
      "deploy": "gh-pages -d build"
@@ -56,9 +46,13 @@ netlify deploy --prod --dir=build
    ```sh
    npm run deploy
    ```
+
+
 ## 🤝 Contributing
 Feel free to open issues or create pull requests.
 
+## 📞 Contact
+- **GitHub:** [DikshaKhandelwal](https://github.com/DikshaKhandelwal)
 
 ---
 
